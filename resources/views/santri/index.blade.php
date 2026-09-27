@@ -8,9 +8,14 @@
 
     <h1>Data Santri</h1>
 
-    <p>
-        /santri/createTambah Santri</a>
-    </p>
+    <button
+        type="button"
+        onclick="window.location.href='/santri/create'"
+    >
+        Tambah Santri
+    </button>
+
+    <br><br>
 
     <table border="1" cellpadding="8" cellspacing="0">
         <thead>
@@ -22,13 +27,17 @@
         </thead>
 
         <tbody>
-            @foreach ($santris as $santri)
+            @forelse ($santris as $santri)
                 <tr>
                     <td>{{ $santri->nis }}</td>
                     <td>{{ $santri->nama }}</td>
                     <td>{{ $santri->jenis_kelamin }}</td>
                 </tr>
-            @endforeach
+            @empty
+                <tr>
+                    <td colspan="3">Belum ada data santri.</td>
+                </tr>
+            @endforelse
         </tbody>
     </table>
 

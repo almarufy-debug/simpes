@@ -8,13 +8,15 @@
 
     <h1>Tambah Santri</h1>
 
-    <p>
-        /santriKembali ke Data Santri</a>
-    </p>
+    <button type="button" onclick="window.location.href='/santri'">
+        Kembali
+    </button>
+
+    <br><br>
 
     @if ($errors->any())
         <div style="color: red;">
-            <strong>Data belum dapat disimpan:</strong>
+            <strong>Data belum bisa disimpan:</strong>
 
             <ul>
                 @foreach ($errors->all() as $error)
@@ -66,7 +68,9 @@
             </select>
         </p>
 
-        <button type="submit">Simpan</button>
+        <button type="submit">
+            Simpan
+        </button>
     </form>
 
 </body>

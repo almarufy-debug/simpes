@@ -29,6 +29,7 @@ class SantriController extends Controller
 
         Santri::create($data);
 
-        return redirect('/santri');
+        return redirect('/santri')
+            ->with('success', 'Data santri berhasil disimpan.');
     }
 }
