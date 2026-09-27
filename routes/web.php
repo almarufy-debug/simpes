@@ -7,4 +7,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/santri', [SantriController::class, 'index']);
+Route::get('/santri', [SantriController::class, 'index'])
+    ->name('santri.index');
+
+Route::get('/santri/create', [SantriController::class, 'create'])
+    ->name('santri.create');
+
+Route::post('/santri', [SantriController::class, 'store'])
+    ->name('santri.store');
